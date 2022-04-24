@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    color: white;
+}
+h1{
+    width: fit-content;
+    margin:1rem auto;
+}
+.wordle{
+    /* border: 2px solid red; */
+}
+.container{
+    /* border: 2px solid rgb(11, 90, 195); */
+    width: fit-content;
+    margin:1rem auto;
+
+}
+.row{
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.box{
+    --size:50px;
+    width: var(--size);
+    height: var(--size);
+    border: 1px solid white;
+    background-color: transparent;
+    outline: none;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+.wrong-position{
+    background-color: rgb(194, 194, 12);
+    animation: rotate 1s;
+}
+.right-position{
+    background-color: green;
+    animation: rotate 1s;
+}
+.wrong-letter{
+    background-color: gray;
+    animation: rotate 1s;
+}
+
+
+.messages{
+    /* width: 150px; */
+    padding: 0.5rem;
+    height: 30px;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    position: absolute;
+    left: 43%;
+    top: 15%;
+    text-align: center;
+    font-weight: 700;
+    visibility: hidden;
+}
+.messages.show-up{
+    visibility: visible;
+    top: 20%;
+    transition: 0.5s;
+}
+
+.winner{
+    background-color: rgba(112, 107, 107,0.4);
+    border: 2px solid gray;
+    color: white;
+    width: 200px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+    text-align: center;
+    position: absolute;
+    left: 40%;
+    top: -30%;
+    visibility: hidden;
+}
+.winner p{
+    margin-top: 1rem;
+    
+}
+.winner span{
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.winner button {
+    width: 100px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    padding: 5px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+  
+  .winner button:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+  
+  .winner button:focus {
+    outline: none;
+  }
+  
+  .winner button {
+    background-image: linear-gradient(
+      to right,
+      #29323c,
+      #485563,
+      #2b5876,
+      #4e4376
+    );
+    box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+  }
+
+
+  .winner.show-up{
+    top: 30%;
+    visibility: visible;
+    transition: 0.5s;
+  }
+  .wordle.show-up{
+      filter: blur(10px);
+  }
+
+
+
+  @keyframes rotate {
+      100%{
+          transform: rotateX(180deg);
+      }
+  }
