@@ -110,7 +110,7 @@ rows.forEach(row => {
 
 function createWord(words) {
     let randomNo = Math.floor(Math.random() * 2315);
-    randomWord = 'sheep';
+    randomWord = words[randomNo];
     randomWordObj={};
     for (let letter of randomWord) {
         if (randomWordObj.hasOwnProperty(letter)) {
